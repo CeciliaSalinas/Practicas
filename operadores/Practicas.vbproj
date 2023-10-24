@@ -48,9 +48,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,15 +75,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BucleFor.vb" />
-    <Compile Include="ClsAireAcondicionado.vb" />
-    <Compile Include="CreacionObjeto.vb" />
-    <Compile Include="FuncionesParaString.vb" />
+    <Compile Include="Clases\ClsAireAcondEncapsulamiento.vb" />
+    <Compile Include="Clases\ClsAireAcondicionado.vb" />
+    <Compile Include="Clases\CreacionObjeto.vb" />
+    <Compile Include="Clases\CreacionObjetoEncapsulamiento.vb" />
+    <Compile Include="CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EntradaDeDatos.Designer.vb">
+      <DependentUpon>EntradaDeDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EntradaDeDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procedimientos\FuncionesParaString.vb" />
     <Compile Include="IngresoSalidaDatos.vb" />
     <Compile Include="IngresoSalidaOperadores.vb" />
-    <Compile Include="Parametros_Argumentos.vb" />
-    <Compile Include="ParametroValorReferencia.vb" />
-    <Compile Include="ProcedimientoFunction.vb" />
-    <Compile Include="ProcedimientoSub.vb" />
+    <Compile Include="Procedimientos\Parametros_Argumentos.vb" />
+    <Compile Include="Procedimientos\ParametroValorReferencia.vb" />
+    <Compile Include="Procedimientos\ProcedimientoFunction.vb" />
+    <Compile Include="Procedimientos\ProcedimientoSub.vb" />
     <Compile Include="SelectCase.vb" />
     <Compile Include="SentenciaIf.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -98,6 +117,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntradaDeDatos.resx">
+      <DependentUpon>EntradaDeDatos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -116,6 +142,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

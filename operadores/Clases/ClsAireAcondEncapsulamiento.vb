@@ -1,12 +1,5 @@
-﻿Public Class ClsAireAcondicionado
+﻿Public Class ClsAireAcondEncapsulamiento
 
-    'ATRIBUTOS/valores DE LA CLASE (los atributos son las variables)
-    'Public marca As String
-    'Public modelo As String
-    'Public color As String
-    'Public voltaje As Integer
-    'Public valor As Integer
-    'Public temperatura As Integer
 
     'ENCAPSULAMIENTO CON MODIFICADOR DE ACCESO PRIVATE
     Private marca As String
@@ -73,5 +66,4 @@
     Public Function getTemperatura() As Integer
         Return temperatura
     End Function
-
 End Class
